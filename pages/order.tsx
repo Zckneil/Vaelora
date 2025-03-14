@@ -27,7 +27,7 @@ export default function Order() {
             transition={{ duration: 0.8 }}
           >
             <h1>Complete Your Order</h1>
-            <p>You're just a few steps away from better breathing</p>
+            <p>You&apos;re just a few steps away from better breathing</p>
           </motion.div>
 
           <div className={styles.grid}>

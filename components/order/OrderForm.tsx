@@ -9,6 +9,13 @@ interface OrderFormProps {
 
 export default function OrderForm({ selectedPlan }: OrderFormProps) {
   const [step, setStep] = useState(1)
+  
+  // Log the selected plan for debugging purposes
+  React.useEffect(() => {
+    if (selectedPlan) {
+      console.log(`Order form initialized with plan: ${selectedPlan}`);
+    }
+  }, [selectedPlan]);
 
   return (
     <div className={styles.form}>
@@ -36,6 +43,9 @@ export default function OrderForm({ selectedPlan }: OrderFormProps) {
             transition={{ duration: 0.3 }}
           >
             <h2>Contact Information</h2>
+            {selectedPlan && (
+              <p className={styles.planInfo}>Selected plan: {selectedPlan}</p>
+            )}
             <div className={styles.fields}>
               <div className={styles.field}>
                 <label htmlFor="email">Email</label>

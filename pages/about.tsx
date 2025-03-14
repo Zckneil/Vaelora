@@ -44,7 +44,7 @@ export default function About() {
           >
             <h1>Our Mission</h1>
             <p>
-              At Vaelora, we're dedicated to revolutionizing respiratory health monitoring
+              At Vaelora, we&apos;re dedicated to revolutionizing respiratory health monitoring
               through innovative technology and data-driven insights.
             </p>
           </motion.div>
@@ -70,7 +70,7 @@ export default function About() {
               <p>
                 Our team of medical professionals, engineers, and designers work 
                 tirelessly to develop solutions that make a real difference in 
-                people's lives.
+                people&apos;s lives.
               </p>
             </motion.div>
             <motion.div 

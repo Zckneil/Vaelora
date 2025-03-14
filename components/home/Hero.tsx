@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import React from 'react'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Container from '@/components/shared/Container'
 import Button from '@/components/shared/Button'

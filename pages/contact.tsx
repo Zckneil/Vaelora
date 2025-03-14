@@ -43,8 +43,8 @@ export default function Contact() {
           >
             <h1>Get in Touch</h1>
             <p>
-              Have questions about Vaelora? We're here to help. Fill out the form 
-              below and we'll get back to you as soon as possible.
+              Have questions about Vaelora? We&apos;re here to help. Fill out the form 
+              below and we&apos;ll get back to you as soon as possible.
             </p>
 
             <div className={styles.grid}>

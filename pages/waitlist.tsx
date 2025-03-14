@@ -62,7 +62,7 @@ export default function Waitlist() {
               >
                 <h3>Thank you for joining!</h3>
                 <p>
-                  We'll keep you updated on our launch and send you exclusive 
+                  We&apos;ll keep you updated on our launch and send you exclusive 
                   early access information.
                 </p>
               </motion.div>

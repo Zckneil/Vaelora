@@ -24,7 +24,7 @@ export default function FeaturesPage() {
           >
             <h1>Advanced Features for Better Breathing</h1>
             <p>
-              Discover how Vaelora's cutting-edge technology helps you monitor and 
+              Discover how Vaelora&apos;s cutting-edge technology helps you monitor and 
               improve your respiratory health with clinical-grade accuracy.
             </p>
           </motion.div>

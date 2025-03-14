@@ -57,7 +57,7 @@ export default function Features() {
           <span className={styles.subtitle}>Features</span>
           <h2 className={styles.title}>Advanced Technology for Better Breathing</h2>
           <p className={styles.description}>
-            Discover how Vaelora's innovative features help you maintain optimal respiratory health.
+            Discover how Vaelora&apos;s innovative features help you maintain optimal respiratory health.
           </p>
         </motion.div>
 

@@ -17,7 +17,7 @@ const Auth = () => {
     if (auth === 'true') {
       router.replace('/');
     }
-  }, []); // Empty dependency array to run only once
+  }, [router]); // Added router as a dependency
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
