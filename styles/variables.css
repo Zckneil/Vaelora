@@ -1,0 +1,44 @@
+:root {
+  /* Primary Colors */
+  --primary: #7B68EE; /* Medium purple */
+  --primary-dark: #6A5ACD; /* Darker purple */
+  --primary-darker: #483D8B; /* Darkest purple for best contrast */
+  
+  /* Background Colors */
+  --bg-light: #e6f0ff; /* Light blue background */
+  --bg-dark: #2a1b3d;
+  --bg-darker: #1a1b4b;
+  --bg-gradient: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+  
+  /* Text Colors */
+  --text-dark: #1A1A1A; /* Almost black for maximum contrast */
+  --text-muted: #666666; /* Dark gray for secondary text */
+  --text-light: #FFFFFF; /* White for dark backgrounds */
+  
+  /* UI Elements */
+  --glass-bg: rgba(255, 255, 255, 0.9); /* More opaque for better contrast */
+  --glass-bg-hover: rgba(255, 255, 255, 1); /* Fully opaque on hover */
+  --glass-border: rgba(106, 90, 205, 0.3); /* Visible border with primary color */
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  --gradient-primary-hover: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-darker) 100%);
+  --gradient-text: linear-gradient(135deg, var(--primary-darker) 0%, var(--primary) 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(72, 61, 139, 0.1);
+  --shadow-md: 0 8px 24px rgba(72, 61, 139, 0.15);
+  --shadow-lg: 0 12px 36px rgba(72, 61, 139, 0.2);
+  --shadow-focus: 0 0 0 3px rgba(72, 61, 139, 0.3);
+  --shadow-glow: 0 0 20px rgba(72, 61, 139, 0.3);
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+} 

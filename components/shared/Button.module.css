@@ -1,0 +1,47 @@
+.button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all var(--transition);
+  text-align: center;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--primary-darker);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  color: var(--primary-darker);
+  border: 1px solid var(--primary-darker);
+  box-shadow: var(--shadow-sm);
+}
+
+.secondary:hover {
+  background: rgba(255, 255, 255, 1);
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .button {
+    width: 100%;
+    padding: 0.875rem 1.75rem;
+  }
+} 

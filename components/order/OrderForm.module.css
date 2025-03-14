@@ -1,0 +1,161 @@
+.form {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 113, 227, 0.1);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+}
+
+.step.active {
+  color: var(--primary);
+}
+
+.number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+}
+
+.label {
+  font-weight: 500;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.fieldGroup {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.field input {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0, 113, 227, 0.2);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: all var(--transition);
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+}
+
+.cardField {
+  position: relative;
+}
+
+.cardField svg {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.cardField input {
+  padding-left: 3rem;
+}
+
+.secure {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(0, 113, 227, 0.05);
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+}
+
+.secure svg {
+  color: var(--primary);
+}
+
+.secure span {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.back {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(0, 113, 227, 0.2);
+  border-radius: var(--radius-full);
+  background: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.back:hover {
+  background: rgba(0, 113, 227, 0.05);
+}
+
+.next,
+.submit {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  flex: 1;
+}
+
+.next:hover,
+.submit:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+} 

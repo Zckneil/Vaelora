@@ -1,0 +1,138 @@
+.comparison {
+  padding: 8rem 0;
+  background: var(--bg-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.header h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-darker);
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.tableWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--glass-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-darker);
+  border-bottom: 2px solid var(--primary-dark);
+}
+
+.table th:first-child {
+  text-align: left;
+  width: 40%;
+}
+
+.category td {
+  background: rgba(123, 104, 238, 0.1);
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  color: var(--primary-darker);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.table td:first-child {
+  text-align: left;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.feature span:first-child {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.table svg {
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+}
+
+/* Fix for check icon */
+.table td svg {
+  color: var(--text-muted);
+}
+
+/* Explicitly style the check icon */
+.table td:has(svg[data-icon="check"]) svg,
+.table td svg[data-icon="check"] {
+  color: var(--primary-darker);
+}
+
+/* Explicitly style the x icon */
+.table td:has(svg[data-icon="x"]) svg,
+.table td svg[data-icon="x"] {
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .comparison {
+    padding: 4rem 0;
+  }
+  
+  .tableWrapper {
+    margin: 0 -1rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .table {
+    font-size: 0.875rem;
+  }
+  
+  .table th,
+  .table td {
+    padding: 1rem;
+  }
+  
+  .header h2 {
+    font-size: 2rem;
+  }
+} 
