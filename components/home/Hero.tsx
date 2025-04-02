@@ -22,9 +22,6 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className={styles.subtitle}>
-              Breathe Smarter
-            </span>
             <h1>
               Breathe{' '}
               <span className={styles.highlight}>
@@ -48,16 +45,14 @@ export default function Hero() {
           </motion.div>
 
           <div className={styles.imageContainer}>
-            <div className={styles.imageBg} />
-            <div className={styles.image}>
-              <Image
-                src="/images/hero/device.png"
-                alt="Vaelora Device"
-                width={600}
-                height={600}
-                priority
-              />
-            </div>
+            <Image
+              src="/images/hero/herobackground.png"
+              alt="Vaelora Smart Respiratory Monitor"
+              width={700}
+              height={700}
+              priority
+              className={styles.deviceImage}
+            />
           </div>
         </div>
       </Container>

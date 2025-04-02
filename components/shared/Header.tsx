@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from 'framer-motion'
 import { LuMenu, LuX, LuLogOut } from 'react-icons/lu'
@@ -10,12 +11,23 @@ import styles from './Header.module.css'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const router = useRouter()
   
   useEffect(() => {
     const handleRouteChange = () => setIsOpen(false)
     router.events.on('routeChangeStart', handleRouteChange)
-    return () => router.events.off('routeChangeStart', handleRouteChange)
+    
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    
+    window.addEventListener('scroll', handleScroll)
+    
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange)
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [router])
 
   const handleSignOut = () => {
@@ -24,11 +36,19 @@ export default function Header() {
   }
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <Container>
         <nav className={styles.nav}>
-          <Link href="/" className={styles.logo}>
-            Vaelora
+          <Link href="/" className={styles.logoLink}>
+            <div className={styles.logo}>
+              <Image 
+                src="/images/logo.svg" 
+                alt="Vaelora" 
+                width={32} 
+                height={32} 
+              />
+              <span>Vaelora</span>
+            </div>
           </Link>
 
           <ul className={styles.desktop}>
@@ -46,11 +66,10 @@ export default function Header() {
 
           <div className={styles.actions}>
             <Button 
-              href="/pricing" 
-              variant="secondary"
-              className={styles.contactBtn}
+              href="/order" 
+              className={styles.orderBtn}
             >
-              Contact Sales
+              Order Now
             </Button>
             <Button
               onClick={handleSignOut}
@@ -89,6 +108,11 @@ export default function Header() {
                     </Link>
                   </li>
                 ))}
+                <li className={styles.mobileOrderBtnContainer}>
+                  <Button href="/order" className={styles.mobileOrderBtn}>
+                    Order Now
+                  </Button>
+                </li>
                 <li>
                   <button onClick={handleSignOut} className={styles.mobileSignOut}>
                     <LuLogOut /> Sign Out

@@ -1,45 +1,27 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { LuHeart, LuActivity, LuBrain, LuSmartphone, LuShield, LuBell } from 'react-icons/lu'
+import Image from 'next/image'
 import Container from '@/components/shared/Container'
 import styles from './Features.module.css'
 
 const features = [
   {
-    icon: <LuHeart />,
+    image: '/images/features/Monitoring.png',
     title: 'Real-Time Monitoring',
     description: 'Track your respiratory health with clinical-grade accuracy in real-time.',
     note: 'FDA-pending approval'
   },
   {
-    icon: <LuActivity />,
-    title: 'Pattern Analysis',
+    image: '/images/features/Detection.png',
+    title: 'Early Detection',
     description: 'Advanced AI algorithms detect patterns and predict potential issues.',
     note: 'Powered by machine learning'
   },
   {
-    icon: <LuBrain />,
-    title: 'Smart Insights',
+    image: '/images/features/Insights.png',
+    title: 'Personalized Insights',
     description: 'Get personalized recommendations based on your breathing patterns.',
     note: 'Continuous learning'
-  },
-  {
-    icon: <LuSmartphone />,
-    title: 'Mobile Integration',
-    description: 'Seamlessly sync with your smartphone for instant access to data.',
-    note: 'iOS and Android'
-  },
-  {
-    icon: <LuShield />,
-    title: 'Data Security',
-    description: 'Your health data is encrypted and protected with military-grade security.',
-    note: 'HIPAA compliant'
-  },
-  {
-    icon: <LuBell />,
-    title: 'Smart Alerts',
-    description: 'Receive timely notifications about changes in your breathing patterns.',
-    note: 'Customizable thresholds'
   }
 ]
 
@@ -75,8 +57,14 @@ export default function Features() {
                 transition: { duration: 0.2 }
               }}
             >
-              <div className={styles.icon}>
-                {feature.icon}
+              <div className={styles.imageContainer}>
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  width={120}
+                  height={120}
+                  className={styles.featureImage}
+                />
               </div>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>

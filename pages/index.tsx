@@ -17,8 +17,10 @@ export default function Home() {
 
       <Hero />
       <Features />
+      {/* Temporarily hidden
       <Benefits />
       <Testimonials />
+      */}
     </>
   )
 } 

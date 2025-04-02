@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Container from './Container'
+import { LuGithub, LuTwitter, LuLinkedin, LuInstagram } from 'react-icons/lu'
 import styles from './Footer.module.css'
 
 const footerLinks = {
@@ -33,19 +35,49 @@ const footerLinks = {
   }
 }
 
+const socialLinks = [
+  { Icon: LuTwitter, href: 'https://twitter.com' },
+  { Icon: LuLinkedin, href: 'https://linkedin.com' },
+  { Icon: LuGithub, href: 'https://github.com' },
+  { Icon: LuInstagram, href: 'https://instagram.com' }
+]
+
 export default function Footer() {
   return (
     <footer className={styles.footer}>
+      <div className={styles.footerGlow} />
       <Container>
         <div className={styles.grid}>
           <div className={styles.company}>
-            <Link href="/" className={styles.logo}>
-              Vaelora
+            <Link href="/" className={styles.logoLink}>
+              <div className={styles.logo}>
+                <Image 
+                  src="/images/logo.svg" 
+                  alt="Vaelora" 
+                  width={40} 
+                  height={40} 
+                />
+                <span>Vaelora</span>
+              </div>
             </Link>
             <p className={styles.description}>
               Revolutionizing respiratory health monitoring with cutting-edge 
               wearable technology and actionable insights.
             </p>
+            
+            <div className={styles.social}>
+              {socialLinks.map(({ Icon, href }, index) => (
+                <a 
+                  key={index} 
+                  href={href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                >
+                  <Icon size={20} />
+                </a>
+              ))}
+            </div>
           </div>
 
           {Object.entries(footerLinks).map(([key, section]) => (

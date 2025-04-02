@@ -4,43 +4,84 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(17, 10, 31, 0.8);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--glass-border);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(123, 104, 238, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+  background: rgba(17, 10, 31, 0.95);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 70px;
+}
+
+.logoLink {
+  text-decoration: none;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-darker);
-  text-decoration: none;
+  color: white;
+}
+
+.logo span {
+  background: linear-gradient(135deg, #fff 0%, #b8b2ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .desktop {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
 }
 
 .desktop a {
   text-decoration: none;
-  color: var(--primary-darker);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
-  transition: color var(--transition);
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  position: relative;
 }
 
-.desktop a:hover,
+.desktop a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.desktop a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #7B68EE, #9370DB);
+  transition: width 0.3s ease;
+}
+
+.desktop a:hover::after,
+.desktop a.active::after {
+  width: 100%;
+}
+
 .desktop a.active {
-  color: var(--primary);
-  text-decoration: underline;
+  color: #fff;
+  font-weight: 600;
 }
 
 .actions {
@@ -49,28 +90,40 @@
   gap: 1rem;
 }
 
-.contactBtn {
-  display: none;
+.orderBtn {
+  background: linear-gradient(135deg, #7B68EE, #5b3ba5) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 0.7rem 1.5rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(123, 104, 238, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.orderBtn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(123, 104, 238, 0.4) !important;
+  background: linear-gradient(135deg, #8E79FF, #6845c5) !important;
 }
 
 .signOutBtn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: var(--primary-darker);
-  border: none;
-  border-radius: var(--radius-md);
+  padding: 0.7rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
   color: white;
   font-weight: 500;
   cursor: pointer;
-  transition: all var(--transition);
+  transition: all 0.3s ease;
 }
 
 .signOutBtn:hover {
-  background: var(--primary-dark);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 .signOutIcon {
@@ -79,16 +132,38 @@
 
 .menuBtn {
   display: none;
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
   padding: 0.5rem;
   cursor: pointer;
-  color: var(--primary-darker);
+  color: white;
   font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.menuBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .mobile {
   display: none;
+}
+
+.mobileOrderBtnContainer {
+  padding: 1rem 2rem !important;
+}
+
+.mobileOrderBtn {
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(135deg, #7B68EE, #5b3ba5) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 0.7rem 1.5rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(123, 104, 238, 0.3) !important;
 }
 
 .mobileSignOut {
@@ -99,16 +174,15 @@
   padding: 0.75rem 2rem;
   background: none;
   border: none;
-  color: var(--primary-darker);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   cursor: pointer;
   font-size: 1rem;
-  transition: color var(--transition);
+  transition: color 0.3s ease;
 }
 
 .mobileSignOut:hover {
-  color: var(--primary);
-  text-decoration: underline;
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -116,28 +190,27 @@
     display: none;
   }
 
-  .contactBtn {
-    display: inline-flex;
-  }
-
   .signOutBtn {
     display: none;
   }
 
   .menuBtn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .mobile {
     display: block;
     position: absolute;
-    top: 80px;
+    top: 70px;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(17, 10, 31, 0.95);
     backdrop-filter: blur(10px);
     padding: 1rem 0;
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid rgba(123, 104, 238, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   }
 
   .mobile ul {
@@ -150,15 +223,14 @@
 
   .mobile a {
     text-decoration: none;
-    color: var(--primary-darker);
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 500;
     display: block;
-    transition: color var(--transition);
+    transition: color 0.3s ease;
   }
 
   .mobile a.active,
   .mobile a:hover {
-    color: var(--primary);
-    text-decoration: underline;
+    color: white;
   }
 } 
