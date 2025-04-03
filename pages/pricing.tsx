@@ -22,7 +22,6 @@ export default function Pricing() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className={styles.subtitle}>Pricing</span>
             <h1>Choose Your Path to Better Breathing</h1>
             <p>
               Select the plan that best fits your needs, with flexible options for

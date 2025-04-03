@@ -78,26 +78,6 @@
   border: 1px solid rgba(0, 113, 227, 0.1);
 }
 
-.feature::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0)
-  );
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
-.feature:hover::before {
-  opacity: 1;
-}
-
 .icon {
   width: 100px;
   height: 100px;
@@ -191,4 +171,44 @@
     width: 40px;
     height: 40px;
   }
+}
+
+/* NEW styles for individual laser borders */
+.laserBorder {
+  position: absolute;
+  background: linear-gradient(90deg, #A080FF, #8A6FFF, #7B68EE, #8A6FFF, #A080FF);
+  box-shadow: 0 0 8px #A080FF, 0 0 15px #8A6FFF, 0 0 20px #7B68EE;
+  z-index: 1;
+}
+
+.laserBorderTop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transform-origin: left; /* Default: animate left-to-right */
+}
+
+.laserBorderRight {
+  top: 0;
+  right: 0; /* Positioned at the right edge */
+  width: 3px;
+  height: 100%;
+  transform-origin: top; /* Default: animate top-to-bottom */
+}
+
+.laserBorderBottom {
+  bottom: 0; /* Positioned at the bottom edge */
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transform-origin: right; /* Needs JS override: animate right-to-left */
+}
+
+.laserBorderLeft {
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  transform-origin: bottom; /* Needs JS override: animate bottom-to-top */
 } 

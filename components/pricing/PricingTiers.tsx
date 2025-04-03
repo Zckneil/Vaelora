@@ -9,8 +9,8 @@ const plans = [
   {
     name: 'Essential',
     price: {
-      monthly: 299,
-      yearly: 3299
+      monthly: 20,
+      yearly: 192 // $20 * 12 months - 20% = $192
     },
     description: 'Perfect for individual health monitoring',
     features: [
@@ -26,8 +26,8 @@ const plans = [
   {
     name: 'Premium',
     price: {
-      monthly: 399,
-      yearly: 4399
+      monthly: 30,
+      yearly: 288 // $30 * 12 months - 20% = $288
     },
     description: 'Advanced features for optimal health management',
     features: [
@@ -44,8 +44,8 @@ const plans = [
   {
     name: 'Professional',
     price: {
-      monthly: 599,
-      yearly: 6599
+      monthly: 50,
+      yearly: 480 // $50 * 12 months - 20% = $480
     },
     description: 'Complete solution for healthcare providers',
     features: [

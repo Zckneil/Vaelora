@@ -119,8 +119,8 @@ export default function Contact() {
                 <div className={styles.infoItem}>
                   <h3>Address</h3>
                   <p>
-                    123 Innovation Drive<br />
-                    San Francisco, CA 94105<br />
+                    4500 San Pablo Road<br />
+                    Jacksonville, FL 32224<br />
                     United States
                   </p>
                 </div>

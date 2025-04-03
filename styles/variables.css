@@ -3,17 +3,28 @@
   --primary: #7B68EE; /* Medium purple */
   --primary-dark: #6A5ACD; /* Darker purple */
   --primary-darker: #483D8B; /* Darkest purple for best contrast */
+  --color-primary-rgb: 123, 104, 238; /* RGB values for primary color */
   
   /* Background Colors */
   --bg-light: #e6f0ff; /* Light blue background */
   --bg-dark: #2a1b3d;
   --bg-darker: #1a1b4b;
   --bg-gradient: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+  --color-background-dark: var(--bg-dark);
   
   /* Text Colors */
   --text-dark: #1A1A1A; /* Almost black for maximum contrast */
   --text-muted: #666666; /* Dark gray for secondary text */
   --text-light: #FFFFFF; /* White for dark backgrounds */
+  --color-text-light: var(--text-light);
+  --color-text-secondary: #A0AEC0;
+  --color-text-muted: var(--text-muted);
+  
+  /* Accent Colors */
+  --color-accent-cyan: #22d3ee;
+  --color-accent-cyan-rgb: 34, 211, 238;
+  --color-accent-pink: #ec4899;
+  --color-accent-green: #10b981;
   
   /* UI Elements */
   --glass-bg: rgba(255, 255, 255, 0.9); /* More opaque for better contrast */

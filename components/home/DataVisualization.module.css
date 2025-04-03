@@ -1,0 +1,292 @@
+/* === Data Visualization Section === */
+.dataVisSection {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Enhanced background pattern effect */
+.dataVisSection::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(123, 104, 238, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(34, 211, 238, 0.05) 0%, transparent 60%);
+  opacity: 1;
+  z-index: 0;
+  animation: subtleShift 15s ease-in-out infinite alternate;
+}
+
+@keyframes subtleShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1b35; /* Dark blue-gray for contrast */
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #4a5568; /* Medium gray for readability */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === Grid & Cards === */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(123, 104, 238, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 32px rgba(123, 104, 238, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 12px 40px rgba(123, 104, 238, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d3748; /* Dark gray for contrast */
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardTitle svg {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+/* === Placeholders & Specific Card Content === */
+.placeholderText {
+  color: var(--color-text-secondary);
+  font-style: italic;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.graphPlaceholder,
+.anomalyVisualPlaceholder,
+.ratePlaceholder {
+  min-height: 150px; /* Give space for visuals */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(123, 104, 238, 0.03);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.metricHighlight {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  color: #059669; /* Adjusted green */
+  margin-top: 10px;
+}
+
+.anomalyContent, .realtimeContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.metricsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #4a5568; /* Medium gray for readability */
+}
+
+.metricsList li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.metricValue {
+  font-weight: 700;
+  color: #0891b2; /* Adjusted cyan */
+  margin-right: 5px;
+}
+
+.anomalyCard .metricValue {
+   color: #db2777; /* Adjusted pink */
+}
+
+.aiMetric {
+  text-align: center;
+  color: #4a5568; /* Medium gray */
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+
+.disclaimer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.8rem;
+  color: #64748b; /* Lighter gray for less emphasis */
+}
+
+/* === FEV1 Graph Styling === */
+.graphPlaceholder {
+  /* Adjust padding/min-height if needed, remove background if SVG fills it */
+  padding: 10px 0; /* Less vertical padding needed now */
+  background-color: transparent; /* Remove placeholder background */
+  min-height: 180px; /* Slightly increased min-height for graph */
+}
+
+.fev1Graph {
+  width: 100%;
+  height: 150px; /* Fixed height for the graph */
+  display: block; /* Ensure SVG behaves like a block */
+}
+
+/* Optional: Add subtle glow to the graph line */
+.fev1Graph path[stroke="var(--color-accent-green)"] {
+  filter: drop-shadow(0 0 3px var(--color-accent-green));
+}
+
+/* === Anomaly Visual Styling === */
+.anomalyVisualPlaceholder {
+  min-height: 100px; /* Adjust height */
+  background-color: transparent;
+  display: flex; /* Use flex for alignment */
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Needed for absolute positioning of dots if desired */
+  padding: 20px 0;
+}
+
+.anomalyDotsContainer {
+  display: flex; /* Arrange dots horizontally */
+  gap: 15px; /* Space between dots */
+  position: relative; /* Context for dot animations */
+  width: 80%; /* Control the spread */
+  justify-content: space-around;
+}
+
+.anomalyDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #db2777; /* Adjusted pink */
+  box-shadow: 0 0 8px rgba(219, 39, 119, 0.5), 0 0 12px rgba(219, 39, 119, 0.3);
+  /* Position is handled by flex container */
+}
+
+/* === Live Rate Gauge Styling === */
+.ratePlaceholder {
+  min-height: 150px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.rateGauge {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: rgba(8, 145, 178, 0.05); /* Lighter cyan bg */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 2px solid rgba(8, 145, 178, 0.2);
+}
+
+.gaugePulse {
+  position: absolute;
+  top: -10px; left: -10px; right: -10px; bottom: -10px;
+  border-radius: 50%;
+  border: 2px solid #0891b2; /* Adjusted cyan */
+  animation: pulseAnimation 2s infinite ease-out;
+  box-shadow: 0 0 10px rgba(8, 145, 178, 0.3), inset 0 0 10px rgba(8, 145, 178, 0.2);
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+.gaugeValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0891b2; /* Adjusted cyan */
+  line-height: 1;
+}
+
+.gaugeUnit {
+  font-size: 0.8rem;
+  color: #4a5568; /* Medium gray */
+  margin-top: 5px;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .grid {
+     grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  }
+}

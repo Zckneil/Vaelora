@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Hero from '@/components/home/Hero'
-import Features from '@/components/home/Features'
+import DataVisualization from '@/components/home/DataVisualization'
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
 
       <Hero />
-      <Features />
+      <DataVisualization />
       {/* Temporarily hidden
       <Benefits />
       <Testimonials />

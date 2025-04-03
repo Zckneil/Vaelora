@@ -8,12 +8,6 @@ import styles from './Hero.module.css'
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={styles.particles}>
-        {[...Array(5)].map((_, i) => (
-          <div key={i} className={styles.particle} />
-        ))}
-      </div>
-
       <Container>
         <div className={styles.grid}>
           <motion.div 
