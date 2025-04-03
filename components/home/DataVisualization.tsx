@@ -16,7 +16,7 @@ const DataVisualization: React.FC = () => {
         >
           <h2 className={styles.title}>See Your Progress, Predict Your Future</h2>
           <p className={styles.subtitle}>
-            "Vaelora doesn't just track—it predicts, adapts, and improves your respiratory health."
+            &ldquo;Vaelora doesn&apos;t just track—it predicts, adapts, and improves your respiratory health.&rdquo;
           </p>
         </motion.div>
 
